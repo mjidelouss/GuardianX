@@ -11,6 +11,7 @@ import { HttpInterceptor } from "./_helpers/http.interceptor";
 import { HeaderComponent } from './header/header.component';
 import { AccessDeniedComponent } from './errors/access-denied/access-denied.component';
 import { AdminComponent } from './admin/admin.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AdminComponent } from './admin/admin.component';
     HomeComponent,
     HeaderComponent,
     AccessDeniedComponent,
-    AdminComponent
+    AdminComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

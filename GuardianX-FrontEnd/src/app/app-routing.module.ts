@@ -5,6 +5,7 @@ import {AccessDeniedComponent} from "./errors/access-denied/access-denied.compon
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
+import {RegisterComponent} from "./register/register.component";
 
 export const routes: Routes = [
     {
@@ -16,11 +17,15 @@ export const routes: Routes = [
       path: 'login',
       component:LoginComponent
     },
+  {
+    path: 'register',
+    component:RegisterComponent
+  },
     {
       path: 'home',
       component: HomeComponent ,
       canActivate: [authGuard],
-      data: {roles: ['ROLE_ADMIN','ROLE_USER']}
+      data: {roles: ['ROLE_USER']}
     },
     {
       path: 'admin',
@@ -36,9 +41,9 @@ export const routes: Routes = [
       path: '**',
       redirectTo: '/home'
     }
-  
+
   ];
-  
+
   @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]

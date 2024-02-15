@@ -46,20 +46,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(request ->
                         request
                                 .requestMatchers(
-                                        "/api/v1/auth/**",
-                                        "/v2/api-docs",
-                                        "/v3/api-docs",
-                                        "/v3/api-docs/**",
-                                        "/swagger-resources",
-                                        "/swagger-resources/**",
-                                        "/configuration/ui",
-                                        "/configuration/security",
-                                        "/swagger-ui/**",
-                                        "/webjars/**",
-                                        "/swagger-ui.html"
-
+                                        "/api/v1/auth/**"
                                 ).permitAll()
-                                //.requestMatchers("/api/v1/resource").hasAnyRole("ADMIN","USER") replaced with annotation in AuthorizationController
                                 .requestMatchers(HttpMethod.POST,"/api/v1/resource").hasRole("ADMIN")
                                 .anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
